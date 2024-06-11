@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+
+/*
+Note for text colors:
+
+1. "Verified Graduate" has the same color as the person's name with 50% opacity
+2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --moderate-violet: hsl(263, 55%, 52%);
+  --border-violet: hsl(264, 82%, 70%);
+  --dark-grayish-blue: hsl(217, 19%, 35%);
+  --semi-opaque-blue: hsla(217, 19%, 35%, 50%);
+  --dark-blackish-blue: hsl(217, 30%, 14%);
+  --white: hsl(0, 0%, 100%);
+  --semi-opaque-white: hsla(0, 0%, 50%);
+  --light-gray: hsl(0, 0%, 81%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+  --font-size-normal: 1.3rem;
+  --font-lighter: 500;
+  --font-bolder: 600;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Barlow Semi Condensed", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.3rem;
+}
+
+main {
+  padding: 7.1rem 2.4rem;
+}
+
+.testimonials {
+  display: grid;
+  gap: 2.4rem;
+}
+
+.card {
+  border-radius: 8px;
+  padding: 2.6rem 3.2rem 3.2rem 3.2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  .verified {
+    font-size: 1.1rem;
+  }
+}
+
+.card--dark {
+  color: var(--semi-opaque-white);
+
+  .author__name,
+  .testimonial-short {
+    color: var(--white);
+  }
+}
+
+.card--violet {
+  background-color: var(--moderate-violet);
+  position: relative;
+
+  .author-avatar {
+    outline: 2px solid var(--border-violet);
+  }
+}
+
+.card--white {
+  background-color: var(--white);
+  color: var(--semi-opaque-blue);
+}
+
+.card--grayish-blue {
+  background-color: var(--dark-grayish-blue);
+}
+
+.card--blackish-blue {
+  background-color: var(--dark-blackish-blue);
+
+  .author-avatar {
+    outline: 2px solid var(--moderate-violet);
+  }
+}
+
+.card--white {
+  color: var(--semi-opaque-blue);
+
+  .author__name,
+  .testimonial-short {
+    color: var(--dark-grayish-blue);
+  }
+}
+
+.quotation-marks {
+  position: absolute;
+  top: 0;
+  right: 10%;
+  z-index: 0;
+}
+
+.card__header {
+  display: flex;
+  gap: 1.7rem;
+  align-items: center;
+  margin-bottom: 1.8rem;
+  position: relative;
+  z-index: 100;
+}
+
+.author-avatar {
+  height: 2.8rem;
+  border-radius: 50%;
+}
+
+.author__name {
+  margin-bottom: 0.4rem;
+}
+
+.testimonial-short {
+  margin-bottom: 1.6rem;
+  position: relative;
+  z-index: 100;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: var(--moderate-violet);
+}
