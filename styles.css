@@ -39,10 +39,15 @@ body {
     BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
     "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6.2rem 2.4rem;
+  position: relative;
 }
 
 main {
-  padding: 7.1rem 2.4rem;
+  max-width: 120rem;
 }
 
 .testimonials {
@@ -155,9 +160,17 @@ main {
   margin-bottom: 1.6rem;
   position: relative;
   z-index: 100;
+  line-height: 1.25;
+}
+
+.quote {
+  line-height: 1.5;
 }
 
 .attribution {
+  position: absolute;
+  bottom: 0;
+  padding: 1rem;
   font-size: 11px;
   text-align: center;
 }
@@ -168,10 +181,30 @@ main {
 
 @media (min-width: 40rem) {
   .testimonials {
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
       "violet violet"
       "whiteone blackish"
       "grayish blackish"
       "whitetwo whitetwo";
+  }
+}
+
+@media (min-width: 50rem) {
+  .testimonials {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "violet violet whitetwo"
+      "whiteone grayish whitetwo"
+      "blackish blackish blackish";
+  }
+}
+
+@media (min-width: 65rem) {
+  .testimonials {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "violet violet grayish whitetwo"
+      "whiteone blackish blackish whitetwo";
   }
 }
