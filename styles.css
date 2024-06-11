@@ -18,9 +18,11 @@ Note for text colors:
   --border-violet: hsl(264, 82%, 70%);
   --dark-grayish-blue: hsl(217, 19%, 35%);
   --semi-opaque-blue: hsla(217, 19%, 35%, 50%);
+  --70pc-blue: hsla(217, 19%, 35%, 70%);
   --dark-blackish-blue: hsl(217, 30%, 14%);
   --white: hsl(0, 0%, 100%);
   --semi-opaque-white: hsla(0, 0%, 100%, 50%);
+  --70pc-white: hsla(0, 0%, 100%, 70%);
   --light-gray: hsl(0, 0%, 81%);
   --light-grayish-blue: hsl(210, 46%, 95%);
   --font-size-normal: 1.3rem;
@@ -46,30 +48,41 @@ main {
 .testimonials {
   display: grid;
   gap: 2.4rem;
+  grid-template-areas:
+    "violet"
+    "grayish"
+    "whiteone"
+    "blackish"
+    "whitetwo";
 }
 
 .card {
   border-radius: 8px;
   padding: 2.6rem 3.2rem 3.2rem 3.2rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
 
-  .verified {
-    font-size: 1.1rem;
-  }
+.card .verified {
+  font-size: 1.1rem;
 }
 
 .card--dark {
-  color: var(--semi-opaque-white);
+  color: var(--70pc-white);
+}
 
-  .author__name,
-  .testimonial-short {
-    color: var(--white);
-  }
+.card--dark .verified {
+  color: var(--semi-opaque-white);
+}
+
+.card--dark .author__name,
+.card--dark .testimonial-short {
+  color: var(--white);
 }
 
 .card--violet {
   background-color: var(--moderate-violet);
   position: relative;
+  grid-area: violet;
 
   .author-avatar {
     outline: 2px solid var(--border-violet);
@@ -78,28 +91,38 @@ main {
 
 .card--white {
   background-color: var(--white);
-  color: var(--semi-opaque-blue);
+  color: var(--70pc-blue);
+}
+
+.card--white-1 {
+  grid-area: whiteone;
+}
+
+.card--white-2 {
+  grid-area: whitetwo;
 }
 
 .card--grayish-blue {
   background-color: var(--dark-grayish-blue);
+  grid-area: grayish;
 }
 
 .card--blackish-blue {
   background-color: var(--dark-blackish-blue);
+  grid-area: blackish;
 
   .author-avatar {
     outline: 2px solid var(--moderate-violet);
   }
 }
 
-.card--white {
-  color: var(--semi-opaque-blue);
+.card--white .author__name,
+.card--white .testimonial-short {
+  color: var(--dark-grayish-blue);
+}
 
-  .author__name,
-  .testimonial-short {
-    color: var(--dark-grayish-blue);
-  }
+.card--white .verified {
+  color: var(--semi-opaque-blue);
 }
 
 .quotation-marks {
@@ -128,6 +151,7 @@ main {
 }
 
 .testimonial-short {
+  font-size: 2rem;
   margin-bottom: 1.6rem;
   position: relative;
   z-index: 100;
@@ -140,4 +164,14 @@ main {
 
 .attribution a {
   color: var(--moderate-violet);
+}
+
+@media (min-width: 40rem) {
+  .testimonials {
+    grid-template-areas:
+      "violet violet"
+      "whiteone blackish"
+      "grayish blackish"
+      "whitetwo whitetwo";
+  }
 }
