@@ -20,7 +20,7 @@ Note for text colors:
   --semi-opaque-blue: hsla(217, 19%, 35%, 50%);
   --dark-blackish-blue: hsl(217, 30%, 14%);
   --white: hsl(0, 0%, 100%);
-  --semi-opaque-white: hsla(0, 0%, 50%);
+  --semi-opaque-white: hsla(0, 0%, 100%, 50%);
   --light-gray: hsl(0, 0%, 81%);
   --light-grayish-blue: hsl(210, 46%, 95%);
   --font-size-normal: 1.3rem;
